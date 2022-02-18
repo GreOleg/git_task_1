@@ -1,0 +1,223 @@
+ahresik@bqtl0018 MINGW64 ~ (main)
+$ git config --list
+diff.astextplain.textconv=astextplain
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Oleg Gresik
+user.email=grek2409@gmail.com
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=git@github.com:GreOleg/git-demo.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+gui.wmstate=normal
+gui.geometry=893x435+130+130 175 196
+
+ahresik@bqtl0018 MINGW64 ~ (main)
+$ git config user.name
+Oleg Gresik
+
+ahresik@bqtl0018 MINGW64 ~ (main)
+$ git config user.email
+grek2409@gmail.com
+
+ahresik@bqtl0018 MINGW64 ~ (main)
+$ cd /c/Users/ahresik/Documents/mentoring-tasks-project/git_task_1
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git init
+Initialized empty Git repository in C:/Users/ahresik/Documents/mentoring-tasks-project/git_task_1/.git/
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (master)
+$ git add README.md
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (master)
+$ git commit -m "first commit"
+[master (root-commit) f0368df] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (master)
+$ git remote add origin https://github.com/GreOleg/git_task_1.git
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (master)
+$ git branch -M main
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 215 bytes | 215.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/GreOleg/git_task_1.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git diff HEAD
+diff --git a/README.md b/README.md
+index 8b13789..dbee026 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,2 @@
+-
++aaa
++bbb
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git add -A
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git commit -m "Update readme file"
+[main 72de164] Update readme file
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 256 bytes | 256.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/GreOleg/git_task_1.git
+   f0368df..72de164  main -> main
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 659 bytes | 47.00 KiB/s, done.
+From https://github.com/GreOleg/git_task_1
+   72de164..94f2ce5  main       -> origin/main
+Updating 72de164..94f2ce5
+Fast-forward
+ README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git fetch -u origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Total 3 (delta 0), reused 2 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 662 bytes | 66.00 KiB/s, done.
+From https://github.com/GreOleg/git_task_1
+   94f2ce5..38cb46a  main       -> origin/main
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git log
+commit 94f2ce5e9f08cd30ee64a1f3cd5c28ccc26a47cf (HEAD -> main)
+Author: Gresik Oleg <57324516+GreOleg@users.noreply.github.com>
+Date:   Fri Feb 18 12:01:27 2022 +0300
+
+    Update README.md
+
+    Update readme file from GitHub
+
+commit 72de1641330de32e545e124608f762a3fe0ed824
+Author: Oleg Gresik <grek2409@gmail.com>
+Date:   Fri Feb 18 11:58:54 2022 +0300
+
+    Update readme file
+
+commit f0368dffd09ca68f9a21f61863c6072309ad5318
+Author: Oleg Gresik <grek2409@gmail.com>
+Date:   Fri Feb 18 11:45:59 2022 +0300
+
+    first commit
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git status
+On branch main
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git merge origin/main
+Updating 94f2ce5..38cb46a
+Fast-forward
+ README.md | 3 ---
+ 1 file changed, 3 deletions(-)
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+$ git log
+commit 38cb46a6f5f7fd759b47ac81569801ed9070c9b8 (HEAD -> main, origin/main)
+Author: Gresik Oleg <57324516+GreOleg@users.noreply.github.com>
+Date:   Fri Feb 18 12:03:55 2022 +0300
+
+    Update README.md
+
+    Update README.MD, rollback changes from the head.
+
+commit 94f2ce5e9f08cd30ee64a1f3cd5c28ccc26a47cf
+Author: Gresik Oleg <57324516+GreOleg@users.noreply.github.com>
+Date:   Fri Feb 18 12:01:27 2022 +0300
+
+    Update README.md
+
+    Update readme file from GitHub
+
+commit 72de1641330de32e545e124608f762a3fe0ed824
+Author: Oleg Gresik <grek2409@gmail.com>
+Date:   Fri Feb 18 11:58:54 2022 +0300
+
+    Update readme file
+
+commit f0368dffd09ca68f9a21f61863c6072309ad5318
+Author: Oleg Gresik <grek2409@gmail.com>
+Date:   Fri Feb 18 11:45:59 2022 +0300
+
+    first commit
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git add .
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git commit -m "create and use gitignore file"
+[main da167ec] create and use gitignore file
+ 1 file changed, 4 insertions(+)
+ create mode 100644 .gitignore
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ahresik@bqtl0018 MINGW64 ~/Documents/mentoring-tasks-project/git_task_1 (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 311 bytes | 311.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/GreOleg/git_task_1.git
+   38cb46a..da167ec  main -> main
+
